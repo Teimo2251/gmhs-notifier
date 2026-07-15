@@ -10,11 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - name: Python 설치
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'   # 3.11 → 3.12로 올려봄
+      
       - name: 패키지 설치
         run: pip install requests beautifulsoup4
+      
       - name: 대회 체크 실행
         run: python scraper.py
